@@ -1,0 +1,15 @@
+[Unit]
+Description=Sebastian Discord Bot (/ask)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/sebas_sample
+ExecStart=/home/pi/sebas_sample/.venv/bin/python /home/pi/sebas_sample/main.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
